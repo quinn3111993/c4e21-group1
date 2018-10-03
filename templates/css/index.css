@@ -12,7 +12,7 @@
 }
 
 .choose-feeling__desc {
-    font-family: 'avenir-oblique', sans-serif;    
+    font-family: 'avenir-oblique', sans-serif;
     font-size: 3.6rem;
     line-height: 4.2rem;
     text-align: center;
@@ -28,8 +28,124 @@
     align-items: center;
     background-color: rgba(38, 96, 100, 0.36);
     margin-bottom: 3rem;
+
 }
+
+.emoticons__item {
+    transition: all .25s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
 .emoticons__link {
     height: 100%;
     display: inline-block;
 }
+.emo {
+
+    transition: all .25s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.emo-top-center {
+    transform-origin: top center;
+}
+
+.emo-left-center {
+    transform-origin: left center;
+}
+
+.emo-right-center {
+    transform-origin: right center;
+}
+
+.emo-center {
+    transform-origin: center center;
+}
+
+
+/*----------  laugh  ----------*/
+
+.emoticons__item--laugh:hover .emo-laugh-mouth {
+    transform: scale(1, 1.3) translateY(-10px);
+
+}
+
+.emoticons__item--laugh:hover .emo-laugh-eye--right {
+    transform: rotate(-5deg) translateY(-5px);
+}
+
+.emoticons__item--laugh:hover .emo-laugh-eye--left {
+    transform: rotate(5deg) translateY(-5px);
+}
+
+/*----------  smile  ----------*/
+
+.emoticons__item--smile:hover .emo-smile-eye--left {
+    transform: scale(1.5) translateX(3px);
+}
+
+.emoticons__item--smile:hover .emo-smile-eye--right {
+    transform: scale(1.5) translateX(-3px);
+}
+
+.emoticons__item--smile:hover .emo-smile-mouth {
+    transform: scale(1.1, 1.2) translateY(-5px);
+}
+
+
+/*----------  crying  ----------*/
+
+.emoticons__item--crying:hover .emo-crying-eye {
+    transform: scale(1, .8);
+}
+
+.emoticons__item--crying:hover .emo-crying-mouth {
+    transform: scale(1.1, 1.2) translateY(-3px);
+}
+
+.emoticons__item--crying:hover .emo-crying-brow--left {
+    transform: rotate(5deg) translateY(5px);
+}
+
+.emoticons__item--crying:hover .emo-crying-brow--right {
+    transform: rotate(-5deg) translateY(5px);
+}
+
+/*----------  meh  ----------*/
+
+.emoticons__item--meh:hover .emo-meh-eye {
+    transform: scaleY(.7) translateY(-2px);
+}
+
+.emoticons__item--meh:hover .emo-meh-mouth {
+    transform: scaleX(.7) translateY(5px);
+}
+
+
+
+/*----------  bored  ----------*/
+
+.emoticons__item--bored:hover .emo-bored-eye {
+    transform: scaleY(.7) translateY(-2px);
+}
+
+.emoticons__item--bored:hover .emo-bored-mouth {
+    transform: scale(.7, 1.2);
+}
+
+
+/*----------  pain  ----------*/
+
+.emoticons__item--pain:hover .emo-pain-eye--left {
+    transform: scaleY(.8) translateY(-2px) rotate(5deg);
+}
+.emoticons__item--pain:hover .emo-pain-eye--right {
+    transform: scaleY(.8) translateY(-2px) rotate(-5deg);
+}
+
+.emoticons__item--pain:hover .emo-pain-mouth {
+    transform: scale(.7, 1.2);
+}
+
+
+
+
+
