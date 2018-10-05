@@ -59,8 +59,7 @@ body {
 }
 
 .main-nav__item:not(:last-child) {
-    margin-right: 3.7rem;
-    min-width: 
+    margin-right: 3.7rem;    
 }
 
 .main-nav__link,
