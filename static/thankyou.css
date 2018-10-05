@@ -1,43 +1,38 @@
 .page-wrapper-thankyou {
-    background-image: url('/imgs/thankyou-bg.jpg');
+    background-image: url('../static/imgs/thankyou-bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
-    width: 100vw;
+    background-position: center center;    
     height: 100vh;
+    color: #ffffff;
  }
 
-.text-center {
-    background-color: rgba(38, 96, 100, 0.5);
-    /* position: absolute; */
-
-    /* text-align: center;  */
-    /* display: inline-block;  */
-    /* line-height: normal; */
-
-    font-family: Avenir;
-    /* border-radius: 10%; */
-    color: #FFFFFF;
+.thank-box {
+    text-align: center;
 }
 
 #thank-you {
     font-weight: 500;
-    font-size: 8vw;
-    margin-top: 80px;
-    padding-top: 10px;
+    display: inline-block;
+    margin: 0 auto;
+    font-size: 7.5vw;
+    margin-top: 110px;   
     line-height: 150%;
     border-radius: 5px;
-    /* top: 25%;
-    left: 25%;
-    right: 25%; */
+    background-color: rgba(38, 96, 100, 0.5);
+    padding: 0 20px;
 }
 
 #because_of_you {
+    margin-top: 39px;
+    display: block;
     font-weight: 300;
     font-size: 2.5vw;
     font-style: italic;
     margin-top: 30px;
     line-height: 150%;
+    background-color: rgba(38, 96, 100, 0.5);
+    padding: 0 20px;
     /* top: 45%;
     left: 20%;
     right: 20%; */

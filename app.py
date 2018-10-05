@@ -1,5 +1,7 @@
 # 1. Create a flask
 from flask import Flask ,render_template, request, redirect, url_for
+import json
+import requests
 import mlab
 from user_input import User_input
 from quote import Quote
@@ -24,12 +26,16 @@ def today_quote():
     quote = choice(topic_quote)
     content = quote.content
     author = quote.author
-<<<<<<< HEAD
-    
-=======
->>>>>>> e548660aea1aeb1255c1bc1a9a1ba2992f22b1e5
 
-    return render_template("today_quote.html",content=content, author= author)
+    url = 'https://api.unsplash.com/search/photos'
+    payload = { 'client_id':'743e2fead95c6632e755212a9d4fc2dea8a9ab8de7f5fb90ae835a017834045f','query': topic}
+    req = requests.get(url, params=payload)
+    data = req.json()
+    random_img = choice(data['results'])
+    imgUrl = str(random_img['urls']['regular'] )
+    
+
+    return render_template("today_quote.html",content=content, author= author, imgUrl=imgUrl)
 
 dic = {
     "excited": "courage",
@@ -40,15 +46,22 @@ dic = {
     "angry": "patience",
 }
 
+
 # 2.1 
 @app.route("/today_quote/<topic>")
 def today_quote_topic(topic):
+    url = 'https://api.unsplash.com/search/photos'
+    payload = { 'client_id':'743e2fead95c6632e755212a9d4fc2dea8a9ab8de7f5fb90ae835a017834045f','query': topic}
+    req = requests.get(url, params=payload)
+    data = req.json()
+    random_img = choice(data['results'])
+    imgUrl = str(random_img['urls']['regular'] )
     if topic in dic.keys():
         quote_list = Quote.objects(topic=dic[topic])
         quote = choice(quote_list)
         content = quote.content
         author = quote.author
-        return render_template("today_quote.html",content=content, author= author)
+        return render_template("today_quote.html",content=content, author= author,imgUrl=imgUrl)
     else:
         return redirect(url_for("today_quote"))
 
@@ -60,21 +73,13 @@ def get_message():
     quote = choice(quote_list)
     content = quote.content
     author = quote.author
-<<<<<<< HEAD
    
     return render_template("get_message.html",content=content, author= author)
-=======
-    # return render_template("",content=content, author= author)
->>>>>>> e548660aea1aeb1255c1bc1a9a1ba2992f22b1e5
 
 # 4. send_message
 @app.route("/send_message",methods=["GET","POST"])
 def sent_message():
-<<<<<<< HEAD
     if request.method =="GET":      
-=======
-    if request.method =="GET":
->>>>>>> e548660aea1aeb1255c1bc1a9a1ba2992f22b1e5
         return render_template("send_message.html")
     elif request.method =="POST":
         form = request.form
