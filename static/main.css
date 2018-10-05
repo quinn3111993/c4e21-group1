@@ -1,19 +1,21 @@
+
+
 @font-face {
     font-family: 'avenir';
-    src: url('../fonts/AvenirLTStd-Roman.otf');
+    src: url('../static/fonts/AvenirLTStd-Roman.otf');
     font-weight: 400;
 }
 
 @font-face {
     font-family: 'avenir-oblique';
-    src: url('../fonts/AvenirLTStd-MediumOblique.otf');
+    src: url('../static/fonts/AvenirLTStd-MediumOblique.otf');
     font-weight: 500;
 
 }
 
 @font-face {
     font-family: 'buda';
-    src: url('../fonts/Buda-Light.ttf');
+    src: url('../static/fonts/Buda-Light.ttf');
     font-weight: 400;
 }
 
@@ -28,6 +30,9 @@
     box-sizing: inherit;
     margin: 0;
     padding: 0;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -35,15 +40,26 @@ body {
     font-size: 3.6rem;
     font-weight: 400;
     line-height: 1;
+   
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a:link,
+a:visited {
+    text-decoration: none;
+    color: #ffffff;
 }
 
 .page-wrapper {
-   background-image: url('../imgs/home-bg.png');
-   background-size: cover;
-   background-repeat: no-repeat;
-   background-position: center center;
-   width: 100vw;
-   height: 100vh;
+    background-image: url('../static/imgs/home-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100vw;
+    height: 100vh;
 }
 
 .main-nav__list {
@@ -53,8 +69,8 @@ body {
     height: 6rem;
     line-height: 6rem;
     background-color: rgba(38, 96, 100, 0.5);
-    border-bottom-left-radius: .5rem;
-    border-bottom-right-radius: .5rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
     list-style-type: none;
 }
 
@@ -62,23 +78,19 @@ body {
     margin-right: 3.7rem;
 }
 
-.main-nav__link,
-.main-nav__link:hover,
-.main-nav__link:focus,
-.main-nav__link:active,
-.main-nav__link:link,
-.main-nav__link:visited {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 2.8rem;
+.main-nav__link {
+
+    font-size: 2vw;
+}
+
+.main-content {
+    min-height: calc(100% - 12rem);
 }
 
 .page-footer {
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    text-align: center;      
 }
+
 .page-footer__title {
     font-family: 'buda', sans-serif;
     font-size: 3.6rem;

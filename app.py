@@ -12,8 +12,8 @@ mlab.connect()
 # 1.homepage.html
 @app.route("/")
 def home():
-    return "test_homepage"
-    #  return render_template("")
+    return render_template('/index.html')
+    
 
 # 2. today_quote
 @app.route("/today_quote/random")
