@@ -21,7 +21,7 @@ def get_topic():
     topic_list = [a.span.string for a in soup.find_all('a', 'topicIndexChicklet')]
     chars = ["'", " "]
     for char in chars:
-        topic_list = [topic.replace(char,'') for topic in topic_list]
+        topic_list = [topic.replace(char,'').lower() for topic in topic_list]
     return topic_list
 
 
@@ -65,5 +65,5 @@ def get_quotes(topic):
 topic_list = get_topic()
 print(topic_list)
 
-for topic in topic_list[92:]:
-    get_quotes(topic.lower())
+# for topic in topic_list[92:]:
+#     get_quotes(topic.lower())

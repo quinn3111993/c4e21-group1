@@ -38,7 +38,7 @@ body {
 }
 
 .page-wrapper {
-   background-image: url('../imgs/send_message_wallpaper.jpeg');
+   background-image: url('static/imgs/send_message_wallpaper.jpeg');
    background-size: cover;
    background-repeat: no-repeat;
    background-position: center center;
