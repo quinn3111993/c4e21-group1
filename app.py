@@ -22,9 +22,9 @@ def today_quote():
     quote = choice(quote_list)
     content = quote.content
     author = quote.author
-    return content
+    
 
-    # return render_template("",content=content, author= author)
+    return render_template("today_quote.html",content=content, author= author)
 
 dic = {
     "excited": "courage",
@@ -56,15 +56,14 @@ def get_message():
     quote = choice(quote_list)
     content = quote.content
     author = quote.author
-    return "test_get_message"
-    #  return render_template("",content=content, author= author)
+   
+    return render_template("get_message.html",content=content, author= author)
 
 # 4. send_message
 @app.route("/send_message",methods=["GET","POST"])
 def sent_message():
-    if request.method =="GET":
-        return "test_send_message"
-        # return render_template("")
+    if request.method =="GET":      
+        return render_template("send_message.html")
     elif request.method =="POST":
         form = request.form
         author = form['author']

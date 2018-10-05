@@ -1,0 +1,39 @@
+.quote{
+    margin : auto;
+    height: auto;
+    margin-top: 137px;
+    background-color: rgba(38, 96, 100, 0.4);
+    padding: 43px 64px 109px;
+    border-radius: 10px;
+    position: relative;
+    padding-right: 50px;
+    flex: 1 1 574px;
+    max-width: 70%;
+}
+.quote-content{
+     color: #FFFFFF;
+     font-size: 36px;
+}
+.quote-author{
+    position : absolute ;
+    right: 46px;
+    bottom: 23px;
+    color: #FFFFFF;
+}
+.button {
+    width: 91px;
+    height: 69px;
+    border-radius: 10px;
+    background-color: rgba(38, 96, 100, 0.5);
+  
+    position: absolute;
+    top: 30px;
+    right: 74px;
+}
+.button >  a {
+    
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
