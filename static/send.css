@@ -1,9 +1,10 @@
+
 .box {
    
     background: rgba(38, 96, 100, 0.5);
     border-radius: 10px;
-}
 
+}
 .form {
     width: 72%;
     margin: 0 auto;
