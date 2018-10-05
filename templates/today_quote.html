@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/quote.css">
+    <link rel="stylesheet" href="../static/main.css">
+    <link rel="stylesheet" href="../static/quote.css">
     <title>Document</title>
 </head>
 
@@ -16,10 +16,10 @@
         <header class="page-header">
             <nav class="main-nav">
                 <ul class="main-nav__list">
-                    <li class="main-nav__item"><a href="" class="main-nav__link">Home</a></li>
-                    <li class="main-nav__item"><a href="" class="main-nav__link">Today Quote</a></li>
-                    <li class="main-nav__item"><a href="" class="main-nav__link">Stranger's Message</a></li>
-                    <li class="main-nav__item"><a href="" class="main-nav__link">Send Message</a></li>
+                    <li class="main-nav__item"><a href="/" class="main-nav__link">Home</a></li>
+                    <li class="main-nav__item"><a href="/today_quote/random" class="main-nav__link">Today Quote</a></li>
+                    <li class="main-nav__item"><a href="/get_message" class="main-nav__link">Stranger's Message</a></li>
+                    <li class="main-nav__item"><a href="/send_message" class="main-nav__link">Send Message</a></li>
                 </ul>
             </nav>
         </header>
@@ -27,7 +27,7 @@
         <main class="main-content">
            <div class="quote-box">
                <p class="quote-box__content">
-                Peace is not absence of conflict, it is the ability to handle conflict by peaceful means.
+                {{content}}
                </p>
            </div>
         </main>

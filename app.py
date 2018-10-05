@@ -1,7 +1,7 @@
 # 1. Create a flask
 from flask import Flask ,render_template, request, redirect, url_for
 import mlab
-from user_input import user_input
+from user_input import User_input
 from quote import Quote
 from random import choice
 
@@ -22,9 +22,8 @@ def today_quote():
     quote = choice(quote_list)
     content = quote.content
     author = quote.author
-    return content
 
-    # return render_template("",content=content, author= author)
+    return render_template("today_quote.html",content=content, author= author)
 
 dic = {
     "excited": "courage",
@@ -43,8 +42,7 @@ def today_quote_topic(topic):
         quote = choice(quote_list)
         content = quote.content
         author = quote.author
-        return content
-        # return render_template("",content=content, author= author)
+        return render_template("today_quote.html",content=content, author= author)
     else:
         return redirect(url_for("today_quote"))
 
@@ -52,30 +50,29 @@ def today_quote_topic(topic):
 # 3. get_message
 @app.route("/get_message")
 def get_message():
-    quote_list = user_input.objects()
+    quote_list = User_input.objects()
     quote = choice(quote_list)
     content = quote.content
     author = quote.author
-    return "test_get_message"
-    #  return render_template("",content=content, author= author)
+    # return render_template("",content=content, author= author)
 
 # 4. send_message
 @app.route("/send_message",methods=["GET","POST"])
 def sent_message():
     if request.method =="GET":
-        return "test_send_message"
-        # return render_template("")
+        return render_template("send_message.html")
     elif request.method =="POST":
         form = request.form
         author = form['author']
         content = form['content']
-    user_input.update(set__author=author, set__content=content, set__topic="message", set__priority=0)
-    user_input.save()
+        new_quote = User_input(author=author, content=content, topic="message", priority=0)
+        new_quote.save()
+        return redirect('/thankyou')
 
 # 5. thank you
 @app.route("/thankyou")
 def thankyou():
-    return render_template("view/thankyou.html")
+    return render_template("thankyou.html")
 
 # 3. Run app
 if __name__ == "__main__" :
