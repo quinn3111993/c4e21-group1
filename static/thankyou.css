@@ -9,14 +9,14 @@
 
 .thank-box {
     text-align: center;
+    text-shadow: 1px 1.5px 3.5px #000;
 }
 
 #thank-you {
     font-weight: 500;
     display: inline-block;
     margin: 0 auto;
-    font-size: 7.5vw;
-    margin-top: 110px;   
+    font-size: 7.5vw;  
     line-height: 150%;
     border-radius: 5px;
     background-color: rgba(38, 96, 100, 0.5);
@@ -32,15 +32,19 @@
     margin-top: 30px;
     line-height: 150%;
     background-color: rgba(38, 96, 100, 0.5);
-    padding: 0 20px;
-    /* top: 45%;
-    left: 20%;
-    right: 20%; */
+    padding: 0 20px;    
 }
 
-.flex {
-    left: 20%;
-    right: 20%;
+@media only screen and (max-width: 664px) {
+    #thank-you {       
+        font-size: 8.5vw;         
+    }
+    
+    #because_of_you {
+        line-height: 180%;
+        font-size: 4vw;      
+    }
 }
+
 
 

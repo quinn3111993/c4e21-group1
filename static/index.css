@@ -2,45 +2,82 @@
     margin-top: 12rem;
     margin-left: 10.67%;
     display: inline-block;
+    text-align: center;
 }
 
 .choose-feeling__title {
     color: #ffffff;
-    font-size: 4.8rem;
+    font-size: 3.1vw;
     line-height: 5.6rem;
     margin-bottom: 3rem;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, .9);
 }
 
 .choose-feeling__desc {
     font-family: 'avenir-oblique', sans-serif;
-    font-size: 3.6rem;
+    font-size: 2.325vw;
     line-height: 4.2rem;
-    text-align: center;
-    display: block;
+    display: inline-block;
+    text-shadow: 2px 3px 6px rgba(0, 0, 0, .7);
+    position: relative;
+
+}
+
+.choose-feeling__desc::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;  
+    left: 0; 
+    width: 100%;
+    height: 1.5px;
+    background-color: rgba(255, 255, 255, .8);
+    transform-origin: center center;
+    transform: scale(0, 1);
+    transition: transform .3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.choose-feeling__desc:hover:after {
+    transform: scale(1, 1);
+}
+
+.choose-feeling__desc:active {
+    transform: translateY(1px);
 }
 
 .emoticons {
-    width: 58.1rem;
-    height: 8.8rem;
+    width: 38vw;
+    padding: .7vw .5vw;
     display: flex;
-    padding: .7rem 1rem 0;
     justify-content: space-between;
     align-items: center;
     background-color: rgba(38, 96, 100, 0.36);
     margin-bottom: 3rem;
-
+    position: relative;
 }
 
 .emoticons__item {
     transition: all .25s cubic-bezier(0.39, 0.575, 0.565, 1);
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
 .emoticons__link {
-    height: 100%;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
 }
-.emo {
 
+.emoticons__link>svg {
+    width: 80%;
+    height: 100%;
+    transition: transform .2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.emoticons__link>svg:active {
+    transform: translateY(2px);
+}
+
+.emo {
     transition: all .25s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
@@ -63,59 +100,59 @@
 
 /*----------  laugh  ----------*/
 
-.emoticons__item--laugh:hover .emo-laugh-mouth {
+.emoticons__item--laugh svg:hover .emo-laugh-mouth {
     transform: scale(1, 1.3) translateY(-10px);
 
 }
 
-.emoticons__item--laugh:hover .emo-laugh-eye--right {
+.emoticons__item--laugh svg:hover .emo-laugh-eye--right {
     transform: rotate(-5deg) translateY(-5px);
 }
 
-.emoticons__item--laugh:hover .emo-laugh-eye--left {
+.emoticons__item--laugh svg:hover .emo-laugh-eye--left {
     transform: rotate(5deg) translateY(-5px);
 }
 
 /*----------  smile  ----------*/
 
-.emoticons__item--smile:hover .emo-smile-eye--left {
+.emoticons__item--smile svg:hover .emo-smile-eye--left {
     transform: scale(1.5) translateX(3px);
 }
 
-.emoticons__item--smile:hover .emo-smile-eye--right {
+.emoticons__item--smile svg:hover .emo-smile-eye--right {
     transform: scale(1.5) translateX(-3px);
 }
 
-.emoticons__item--smile:hover .emo-smile-mouth {
+.emoticons__item--smile svg:hover .emo-smile-mouth {
     transform: scale(1.1, 1.2) translateY(-5px);
 }
 
 
 /*----------  crying  ----------*/
 
-.emoticons__item--crying:hover .emo-crying-eye {
+.emoticons__item--crying svg:hover .emo-crying-eye {
     transform: scale(1, .8);
 }
 
-.emoticons__item--crying:hover .emo-crying-mouth {
+.emoticons__item--crying svg:hover .emo-crying-mouth {
     transform: scale(1.1, 1.2) translateY(-3px);
 }
 
-.emoticons__item--crying:hover .emo-crying-brow--left {
+.emoticons__item--crying svg:hover .emo-crying-brow--left {
     transform: rotate(5deg) translateY(5px);
 }
 
-.emoticons__item--crying:hover .emo-crying-brow--right {
+.emoticons__item--crying svg:hover .emo-crying-brow--right {
     transform: rotate(-5deg) translateY(5px);
 }
 
 /*----------  meh  ----------*/
 
-.emoticons__item--meh:hover .emo-meh-eye {
+.emoticons__item--meh svg:hover .emo-meh-eye {
     transform: scaleY(.7) translateY(-2px);
 }
 
-.emoticons__item--meh:hover .emo-meh-mouth {
+.emoticons__item--meh svg:hover .emo-meh-mouth {
     transform: scaleX(.7) translateY(5px);
 }
 
@@ -123,29 +160,59 @@
 
 /*----------  bored  ----------*/
 
-.emoticons__item--bored:hover .emo-bored-eye {
+.emoticons__item--bored svg:hover .emo-bored-eye {
     transform: scaleY(.7) translateY(-2px);
 }
 
-.emoticons__item--bored:hover .emo-bored-mouth {
+.emoticons__item--bored svg:hover .emo-bored-mouth {
     transform: scale(.7, 1.2);
 }
 
 
 /*----------  pain  ----------*/
 
-.emoticons__item--pain:hover .emo-pain-eye--left {
+.emoticons__item--pain svg:hover .emo-pain-eye--left {
     transform: scaleY(.8) translateY(-2px) rotate(5deg);
 }
-.emoticons__item--pain:hover .emo-pain-eye--right {
+
+.emoticons__item--pain svg:hover .emo-pain-eye--right {
     transform: scaleY(.8) translateY(-2px) rotate(-5deg);
 }
 
-.emoticons__item--pain:hover .emo-pain-mouth {
+.emoticons__item--pain svg:hover .emo-pain-mouth {
     transform: scale(.7, 1.2);
 }
 
 
+/*----------  Media query  ----------*/
 
+@media only screen and (max-width: 852px) {
+    .choose-feeling__title {
+        font-size: 5vw;
+    }
 
+    .choose-feeling__desc {
+        font-size: 3.75vw;
+    }
 
+    .emoticons {
+        width: 50vw;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+    .choose-feeling__title {
+        font-size: 6vw;
+    }
+
+    .choose-feeling__desc {
+        font-size: 4.5vw;
+    }
+
+    .emoticons {
+        width: 60vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

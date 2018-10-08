@@ -1,44 +1,84 @@
-.quote{
-    margin : auto;
-    height: auto;
-    margin-top: 100px;
-    background-color: rgba(38, 96, 100, 0.4);
-    padding: 43px 64px 109px;
+.quote {
+    margin-left: auto;
+    margin-right: auto;      
+    background-color: rgba(38, 96, 100, 0.65);
+    padding: 4vh 7vw;   
     border-radius: 10px;
-    position: relative;  
+    position: relative;
     flex: 1 1 574px;
     max-width: 70%;
+    text-shadow: 1px 1.5px 3.5px #000;
 }
-.quote-content{
-     color: #FFFFFF;
-     font-size: 2.5vw;
-     line-height: 110%;
-     text-align: justify;
-}
-.quote-author{
-    position : absolute ;
-    right: 46px;
-    bottom: 23px;
+
+.quote-content {
     color: #FFFFFF;
     font-size: 2.5vw;
+    line-height: 120%;
+    text-align: justify;
+    text-align-last: left;
 }
+
+.quote-author {    
+    margin-top: 7vh;
+    color: #FFFFFF;
+    font-size: 2.5vw;
+    display: block;
+    text-align: right;
+    margin-right: -3vw;
+}
+
 .button {
-    width: 10%;
-    height: 10%;
+    width: 6vw;
+    padding: .5vw 1vw;
     border-radius: 10px;
-    background-color: rgba(38, 96, 100, 0.5);    
+    background-color: rgba(38, 96, 100, 0.8);
     position: absolute;
     top: 25px;
     right: 74px;
+  
 }
-.button >  a {
-    
+@keyframes shake {
+    0% {
+        transform: rotateZ(3deg);
+    }
+    10% {
+        transform: rotateZ(0);
+    }
+    20% {
+        transform: rotateZ(-3deg);
+    }
+    60% {
+        transform: rotateZ(0);
+    }
+    80% {
+        transform: rotateZ(3deg);
+    }
+    100% {
+        transform: rotateZ(-3deg);
+    }
+}
+.button:hover svg {
+    animation: shake .3s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+}
+.button>a {
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-.button > svg {
-    max-width: 100%;
+.button svg {
+    width: 100%;
+}
+@media only screen and (max-width: 570px) {
+    .button {        
+        overflow: hidden;
+        height: auto;
+        width: 10vw;
+        padding: 1.5vw 2vw;
+        right: 10%;
+    }
+    .quote-content,.quote-author {
+        font-size: 4vw;
+    }
 }
