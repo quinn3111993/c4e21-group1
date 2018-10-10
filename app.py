@@ -70,7 +70,7 @@ def today_quote_topic(topic):
 # 3. get_message
 @app.route("/get_message")
 def get_message():
-    quote_list = User_input.objects()
+    quote_list = User_input.objects(priority=1)
     quote = choice(quote_list)
     content = quote.content
     author = quote.author
